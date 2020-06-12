@@ -1,0 +1,41 @@
+﻿<html>
+<head>
+    <title>Quiz APP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="check()">
+    <h2>Marvel Quiz</h2>
+    <br>
+    <div id="questions">
+    </div>
+    <div class=inputDiv>
+        <div>
+            <input type="radio" id="op1" name="options">
+            <label id="opt1"></label>
+            <br>
+        </div>
+        <br>
+        <input type="radio" id="op2" name="options">
+        <label id="opt2"></label>
+        <br>
+        <br>
+        <input type="radio" id="op3" name="options">
+        <label id="opt3"></label>
+        <br>
+        <br>
+        <input type="radio" id="op4" name="options">
+        <label id="opt4"></label>
+        <br>
+        <br>
+        <button class="btn1" onclick="goback()">Previous Question</button>&nbsp;<button class="btn1" onclick="check();">Next Question</button>
+    </div>
+    <div class="inputDiv1" atteribute hidden>
+        <label id="result1">You have scored:</label>
+        <label id="result"></label><br><br><br>
+        <button onclick="location.href ='index.html'" class="btn1">Restart Quiz</button>
+    </div>
+    <script src="javascript.js" type="text/javascript"></script>
+    <script src="result.js" type="text/javascript"></script>
+    <script src="json.json" type="text/javascript"></script>
+</body>
+</html>

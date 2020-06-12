@@ -1,0 +1,90 @@
+var Data = [
+    {
+        "question": "",
+        "op1": "",
+        "op2": "",
+        "op3": "",
+        "op4": "",
+        "answer": ""
+    },
+    {
+        "question": "1)What is the role played by Robert Jr in Avengers?",
+        "op1": "Hulk",
+        "op2": "Iron Man",
+        "op3": "X-Men",
+        "op4": "Captain Marvel",
+        "answer": "Iron Man"
+    },
+    {
+        "question": "2)Who is the Leader of S.H.E.I.L.D?",
+        "op1": "Tony Shark",
+        "op2": "Natasha",
+        "op3": "Maria Hill",
+        "op4": "Nick Fury",
+        "answer": "Nick Fury"
+    },
+    {
+        "question": "3)In Avengers: Infinity War, what is the name of the villain who's on a mission to collect the infinity stones?",
+        "op1": "Loki",
+        "op2": "Ultron",
+        "op3": "Thanos",
+        "op4": "Red Skull",
+        "answer": "Thanos"
+    },
+    {
+        "question": "4)What is the name of Tony Stark's A.I. assistant, who becomes the basis of The Vision?",
+        "op1": "H.O.M.E.R",
+        "op2": "S.H.I.E.L.D",
+        "op3": "J.A.R.V.I.S",
+        "op4": "A.L.F.R.E.D",
+        "answer": "J.A.R.V.I.S"
+    },
+    {
+        "question": "5)Who is Gamora's sister?",
+        "op1": "Aurora",
+        "op2": "Meteor",
+        "op3": "Nebula",
+        "op4": "Asteroid",
+        "answer": "Nebula"
+    },
+    {
+        "question": "6)If Scott Lang is Ant-Man, who's the Wasp?",
+        "op1": "MJ Jones",
+        "op2": "Hope van Dyne",
+        "op3": "Wendy Lawson",
+        "op4": "Carol Danver",
+        "answer": "Hope van Dyne"
+    },
+    {
+        "question": "7)What is Peter Quill’s alter ego?",
+        "op1": "Star-Man",
+        "op2": "Star-Lord",
+        "op3": "Star-Dude",
+        "op4": "Star-Killer",
+        "answer": "Star-Lord"
+    },
+    {
+        "question": "8)What Nazi organization infiltrated SHIELD?",
+        "op1": "HYDRA",
+        "op2": "EMPUSA",
+        "op3": "CHIMERA",
+        "op4": "SPHINX",
+        "answer": "HYDRA"
+    },
+    {
+        "question": "9)Where did Scott Lang work before becoming Ant-Man?",
+        "op1": "Jamba Juice",
+        "op2": "McDonald's",
+        "op3": "KFC",
+        "op4": "Baskin Robbins",
+        "answer": "Baskin Robbins"
+    },
+    {
+        "question": "10)Who is the main villain in Spider-Man: Homecoming?",
+        "op1": "Mysterio",
+        "op2": "Vulture",
+        "op3": "Venom",
+        "op4": "Kraven",
+        "answer": "Mysterio"
+    }
+]

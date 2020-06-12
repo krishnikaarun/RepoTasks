@@ -1,80 +1,57 @@
-﻿var len = 0;
-var len2 = 0;
-var taskInput = document.getElementById("new-task");
-var addButton = document.getElementsByTagName("button")[0];
-var incompleteTaskHolder = document.getElementById("incomplete");
-var completedTasksHolder = document.getElementById("completed");
+﻿var i = 0;
+var mark = 0;
 
-var createNewTaskElement = function (taskString) {
-	var listItem = document.createElement("li");
-	var checkBox = document.createElement("input");
-	var label = document.createElement("label");
---	var deleteButton = document.createElement("button");
-	label.innerText = taskString;
-	checkBox.type = "checkbox";
---	deleteButton.innerText = "X";
---	deleteButton.className = "delete";
-	listItem.appendChild(checkBox);
-	listItem.appendChild(label);
---	listItem.appendChild(deleteButton);
-	len++;
-	displaycount();
-	return listItem;
+var get = (i) => {
+    try {
+        document.getElementById("questions").innerHTML = Data[i].question;
+        document.getElementById("opt1").innerHTML = Data[i].op1;
+        document.getElementById("opt2").innerHTML = Data[i].op2;
+        document.getElementById("opt3").innerHTML = Data[i].op3;
+        document.getElementById("opt4").innerHTML = Data[i].op4;
+        clear();
+    }
+    catch{
+        if (i == -1) {
+            alert("No More previous Question");
+        }
+        if (i > 10) {
+            alert("Quiz Ended");
+            loadNewDoc();
+        }
+        i--;
+    }
 }
 
-var addTask = function () {
-	var listItem = createNewTaskElement(taskInput.value);
-	incompleteTaskHolder.appendChild(listItem);
-	bindTaskEvents(listItem, taskCompleted);
+loadNewDoc = () => {
+    window.location = "result.html";
 }
 
-var deleteTask = function () {
-	var listItem = this.parentNode;
-	var ul = listItem.parentNode;
-	ul.removeChild(listItem);
-	len--;
-	displaycount();	
-	displaycount2();
+goback = () => {
+    i--;
+    get(i);
+
+    var markvalue = window.localStorage.getItem("mark");
+    console.log(markvalue);
+}
+check = () => {
+        const oldmark = mark;
+        if (document.getElementById("op1").checked && Data[i].op1 == Data[i].answer) { mark++; }
+        if (document.getElementById("op2").checked && Data[i].op2 == Data[i].answer) { mark++; }
+        if (document.getElementById("op3").checked && Data[i].op3 == Data[i].answer) { mark++; }
+        if (document.getElementById("op4").checked && Data[i].op4 == Data[i].answer) { mark++; }
+        i++;
+    if (oldmark < mark) {
+            window.localStorage.setItem("mark", mark);
+       }
+        get(i);
 }
 
-var taskCompleted = function () {
-	var listItem = this.parentNode;
-	completedTasksHolder.appendChild(listItem);
-	bindTaskEvents(listItem, taskIncomplete);
-	displaycount2();
-
+clear = () =>{
+    if ((document.getElementById("op1").checked = true) || (document.getElementById("op2").checked = true) || (document.getElementById("op3").checked = true) || (document.getElementById("op4").checked = true)) {
+        document.getElementById("op1").checked = false;
+        document.getElementById("op2").checked = false;
+        document.getElementById("op3").checked = false;
+        document.getElementById("op4").checked = false;
+    }
 }
 
-
-var taskIncomplete = function () {
-	var listItem = this.parentNode;
-	incompleteTaskHolder.appendChild(listItem);
-	bindTaskEvents(listItem, taskCompleted);
-}
-
-
-
-var ajaxRequest = function () {
-	console.log("AJAX Request");
-}
-
-addButton.addEventListener("click", addTask);
-
-
-var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
-	var checkBox = taskListItem.querySelector("input[type=checkbox]");
-	var deleteButton = taskListItem.querySelector("button.delete");
-	deleteButton.onclick = deleteTask;
-	checkBox.onchange = checkBoxEventHandler;
-}
-
-var displaycount = function () {
-
-	document.getElementById("totcount1").innerHTML = len;
-}
-
-var displaycount2 = function () {
-
-	len2 = document.querySelectorAll('input[type="checkbox"]:checked').length
-	document.getElementById("top1").innerHTML = len2;
-}
