@@ -9,14 +9,14 @@ var createNewTaskElement = function (taskString) {
 	var listItem = document.createElement("li");
 	var checkBox = document.createElement("input");
 	var label = document.createElement("label");
---	var deleteButton = document.createElement("button");
+	var deleteButton = document.createElement("button");
 	label.innerText = taskString;
 	checkBox.type = "checkbox";
---	deleteButton.innerText = "X";
---	deleteButton.className = "delete";
+	deleteButton.innerText = "X";
+	deleteButton.className = "delete";
 	listItem.appendChild(checkBox);
 	listItem.appendChild(label);
---	listItem.appendChild(deleteButton);
+	listItem.appendChild(deleteButton);
 	len++;
 	displaycount();
 	return listItem;
